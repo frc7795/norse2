@@ -40,8 +40,7 @@ public class ArcadeDriveCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //Most of this is copied/adapted from last year's code so it may not work
-    m_drivetrain.drive(m_controller.getY(Hand.kLeft), m_controller.getRawAxis(4));
+    //Most of this is copied/adapted from last year's code so it may not work m_controller.getRawAxis(4)
     double steeringSpeedScale = 0.6;
     double steering = m_controller.getRawAxis(4);
     double power = m_controller.getY(Hand.kLeft);
