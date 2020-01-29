@@ -9,7 +9,9 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.Robot;
 import frc.robot.subsystems.DrivetrainSubsystem;
 
@@ -17,7 +19,7 @@ public class ArcadeDriveCommand extends CommandBase {
   DrivetrainSubsystem m_drivetrain;
   Joystick m_controller;
   private double lastSetPower = 0.0;
-  private double magicPowerFraction = 0.05;
+  private double magicPowerFraction = 0.2;
   /**
    * Creates a new TankDriveCommand.
    */
@@ -31,6 +33,7 @@ public class ArcadeDriveCommand extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    SmartDashboard.putNumber("Magic", magicPowerFraction);
   }
 
  // private static double clip(double val) {
@@ -42,16 +45,19 @@ public class ArcadeDriveCommand extends CommandBase {
   public void execute() {
     //Most of this is copied/adapted from last year's code so it may not work m_controller.getRawAxis(4)
     double steeringSpeedScale = 0.6;
-    double steering = m_controller.getRawAxis(4);
-    double power = m_controller.getY(Hand.kLeft);
+    double steering = m_controller.getRawAxis(Constants.RIGHT_JOY_X);
+    double power = m_controller.getRawAxis(Constants.LEFT_JOY_Y);
+    double magic = SmartDashboard.getNumber("Magic", magicPowerFraction);
 
-    power = lastSetPower + magicPowerFraction * (power - lastSetPower);
+    power = lastSetPower + magic * (power - lastSetPower);
     lastSetPower = power;
 
     steering = steering * steeringSpeedScale;
     //double powerLeft = clip(power - steering);
     //double powerRight = clip(power + steering);
 
+    SmartDashboard.putNumber("Drive power", power);
+    SmartDashboard.putNumber("Steering", steering);
     Robot.drivetrain.drive(power, steering);
   }
 
