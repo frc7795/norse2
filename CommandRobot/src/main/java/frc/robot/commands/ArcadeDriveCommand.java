@@ -47,6 +47,7 @@ public class ArcadeDriveCommand extends CommandBase {
     double steeringSpeedScale = 0.6;
     double steering = m_controller.getRawAxis(Constants.RIGHT_JOY_X);
     double power = m_controller.getRawAxis(Constants.LEFT_JOY_Y);
+    //Balances out the distribution of power to the robot.
     double magic = SmartDashboard.getNumber("Magic", magicPowerFraction);
 
     power = lastSetPower + magic * (power - lastSetPower);
