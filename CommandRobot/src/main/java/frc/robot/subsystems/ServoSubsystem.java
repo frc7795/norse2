@@ -7,12 +7,7 @@
 
 package frc.robot.subsystems;
 
-import frc.robot.Constants;
-import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
 import edu.wpi.first.wpilibj.Servo;
 
 public class ServoSubsystem extends SubsystemBase {
@@ -21,5 +16,4 @@ public class ServoSubsystem extends SubsystemBase {
     public ServoSubsystem() {
         flapper = new Servo(0);
     }
-
 }
