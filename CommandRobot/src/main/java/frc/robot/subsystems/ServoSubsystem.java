@@ -11,8 +11,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Servo;
 
 public class ServoSubsystem extends SubsystemBase {
+    
     Servo flapper;
-    // Creates  a new ServoSubsystem.
+    // Creates a new ServoSubsystem.
     public ServoSubsystem() {
         flapper = new Servo(0);
     }
