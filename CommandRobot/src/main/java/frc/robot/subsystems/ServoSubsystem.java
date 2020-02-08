@@ -12,9 +12,19 @@ import edu.wpi.first.wpilibj.Servo;
 
 public class ServoSubsystem extends SubsystemBase {
     
-    Servo flapper;
+    private Servo front = new Servo(6);
+    private Servo back = new Servo(7);
+
+    static final double min = 0.1;
+    static final double max = 0.9;
+
     // Creates a new ServoSubsystem.
     public ServoSubsystem() {
-        flapper = new Servo(0);
+        // Sets both servos to minimum position
+        front.set(min);
+        back.set(min);
+    }
+    public void changePosition(Servo servo, double input){
+        servo.set(input);
     }
 }
