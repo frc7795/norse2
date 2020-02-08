@@ -12,8 +12,10 @@ import edu.wpi.first.wpilibj.Servo;
 
 public class ServoSubsystem extends SubsystemBase {
     
-    private Servo front = new Servo(6);
-    private Servo back = new Servo(7);
+    private Servo frontLeft = new Servo(6);
+    private Servo frontRight = new Servo(7);
+    private Servo backLeft = new Servo(8);
+    private Servo backRight = new Servo(9);
 
     static final double min = 0.1;
     static final double max = 0.9;
@@ -21,8 +23,10 @@ public class ServoSubsystem extends SubsystemBase {
     // Creates a new ServoSubsystem.
     public ServoSubsystem() {
         // Sets both servos to minimum position
-        front.set(min);
-        back.set(min);
+        frontLeft.set(min);
+        frontRight.set(min);
+        backLeft.set(min);
+        backRight.set(min);
     }
     public void changePosition(Servo servo, double input){
         servo.set(input);
