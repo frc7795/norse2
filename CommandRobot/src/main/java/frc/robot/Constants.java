@@ -28,8 +28,15 @@ public final class Constants {
     //Game controller joystick axes
     public static final int LEFT_JOY_X = 0;
     public static final int LEFT_JOY_Y = 1;
-    public static final int RIGHT_JOY_X = 2;
-    public static final int RIGHT_JOY_Y = 3;
+    public static final int LEFT_TRIG = 2;
+
+    public static final int RIGHT_JOY_X = 3;
+    public static final int RIGHT_JOY_Y = 4;
+    public static final int RIGHT_TRIG = 5;
+    
+    //Game controller buttons
+    public static final int A = 1;
+    public static final int B = 2;
     
 
 }
