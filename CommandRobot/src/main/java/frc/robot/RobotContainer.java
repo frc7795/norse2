@@ -27,6 +27,8 @@ public class RobotContainer {
   private static final DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
 
   Joystick controller = new Joystick(Constants.CONTROLLER_USB_ID);
+  
+  // Trigger rightTrigger = new Trigger(controller, 0);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -44,6 +46,7 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+
   }
 
 
