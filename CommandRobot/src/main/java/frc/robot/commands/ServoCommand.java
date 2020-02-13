@@ -16,5 +16,18 @@ import frc.robot.Robot;
 import frc.robot.subsystems.ServoSubsystem;
 
 public class ServoCommand extends CommandBase {
-    // Place servo commands
+  ServoSubsystem m_servo;
+  Joystick m_controller;
+  public ServoCommand(ServoSubsystem servo, Joystick controller){
+      m_servo = servo;
+      m_controller = controller;
+      addRequirements(m_servo);
+  }
+
+  @Override
+  public void execute() {
+      double position = m_controller.getRawAxis(Constants.RIGHT_TRIG);
+
+      SmartDashboard.putNumber("Servo position", position);
+  }
 }
