@@ -25,7 +25,7 @@ public final class Constants {
 
     //Joystick port IDs
     public static final int CONTROLLER_USB_ID = 0;
-    //Game controller joystick axes
+    //Game controller joystick axe
     public static final int LEFT_JOY_X = 0;
     public static final int LEFT_JOY_Y = 1;
     public static final int LEFT_TRIG = 2;
@@ -39,6 +39,4 @@ public final class Constants {
     public static final int B = 2;
     public static final int X = 3;
     public static final int Y = 4;
-    
-
 }
