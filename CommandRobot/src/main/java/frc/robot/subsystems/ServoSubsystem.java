@@ -24,6 +24,7 @@ public class ServoSubsystem extends SubsystemBase {
         front.set(min);
         back.set(min);
     }
+    // Sets the servos to inputted positions
     public static void changePosition(){
         double rightInput = RobotContainer.getDriverRightTrigger();
         double leftInput = RobotContainer.getDriverLeftTrigger();
