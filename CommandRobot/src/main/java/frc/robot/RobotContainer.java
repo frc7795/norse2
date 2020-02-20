@@ -38,6 +38,10 @@ public class RobotContainer {
     return controller.getRawAxis(Constants.LEFT_TRIG);
   }
 
+  public static boolean getDriverYButton() {
+    return controller.getRawButtonPressed(Constants.Y);
+  }
+
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
