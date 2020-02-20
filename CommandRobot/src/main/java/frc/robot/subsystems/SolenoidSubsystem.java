@@ -17,4 +17,10 @@ public class SolenoidSubsystem extends SubsystemBase {
     public SolenoidSubsystem(){
         sproing.set(false);
     }
+
+    public static void changePosition(){
+        boolean input = RobotContainer.getDriverYButton();
+        sproing.set(input);
+    }
+}
 }
