@@ -23,4 +23,3 @@ public class SolenoidSubsystem extends SubsystemBase {
         sproing.set(input);
     }
 }
-}
