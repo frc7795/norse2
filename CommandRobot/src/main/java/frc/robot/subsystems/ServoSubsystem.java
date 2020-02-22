@@ -6,29 +6,25 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.subsystems;
 
-import frc.robot.RobotContainer;
+//import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Servo;
 
 public class ServoSubsystem extends SubsystemBase {
     
-    private static Servo front = new Servo(6);
-    private static Servo back = new Servo(7);
-
-    static final double min = 0.1;
-    static final double max = 0.9;
+    Servo front;
+    Servo back;
+    double min = 0;
+    double scalar = 180;
 
     // Creates a new ServoSubsystem.
     public ServoSubsystem() {
-        // Sets both servos to minimum position
-        front.set(min);
-        back.set(min);
+        front = new Servo(6);
+        back = new Servo(7);
     }
     // Sets the servos to inputted positions
-    public static void changePosition(){
-        double rightInput = RobotContainer.getDriverRightTrigger();
-        double leftInput = RobotContainer.getDriverLeftTrigger();
-        front.set(rightInput);
-        back.set(leftInput);
+    public void changePosition(double right, double left){
+        front.setAngle(right*scalar);
+        back.setAngle(left*scalar);
     }
 }

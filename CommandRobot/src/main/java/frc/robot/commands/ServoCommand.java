@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
-//import frc.robot.Robot;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.ServoSubsystem;
 
 public class ServoCommand extends CommandBase {
@@ -27,7 +27,7 @@ public class ServoCommand extends CommandBase {
   @Override
   public void execute() {
       double position = m_controller.getRawAxis(Constants.RIGHT_TRIG);
-
-      SmartDashboard.putNumber("Servo position", position);
+      SmartDashboard.putNumber("Servo", position);
+      m_servo.changePosition(RobotContainer.getDriverRightTrigger(), RobotContainer.getDriverLeftTrigger());
   }
 }
