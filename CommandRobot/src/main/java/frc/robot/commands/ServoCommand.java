@@ -16,8 +16,12 @@ import frc.robot.RobotContainer;
 import frc.robot.subsystems.ServoSubsystem;
 
 public class ServoCommand extends CommandBase {
+  
   ServoSubsystem m_servo;
   Joystick m_controller;
+  double rPosition = m_controller.getRawAxis(Constants.RIGHT_TRIG);
+  double lPosition = m_controller.getRawAxis(Constants.LEFT_TRIG);
+
   public ServoCommand(ServoSubsystem servo, Joystick controller){
       m_servo = servo;
       m_controller = controller;
@@ -25,9 +29,17 @@ public class ServoCommand extends CommandBase {
   }
 
   @Override
+  public void initialize() {
+      SmartDashboard.putNumber("Back Servos", lPosition);
+      SmartDashboard.putNumber("Front Servos", rPosition);
+  }
+
+  @Override
   public void execute() {
-      double position = m_controller.getRawAxis(Constants.RIGHT_TRIG);
-      SmartDashboard.putNumber("Servo", position);
+
+      SmartDashboard.putNumber("Back Servos", lPosition);
+      SmartDashboard.putNumber("Front Servos", rPosition);
+
       m_servo.changePosition(RobotContainer.getDriverRightTrigger(), RobotContainer.getDriverLeftTrigger());
   }
 }
