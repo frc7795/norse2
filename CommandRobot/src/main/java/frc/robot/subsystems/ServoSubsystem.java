@@ -14,8 +14,7 @@ public class ServoSubsystem extends SubsystemBase {
     
     Servo front;
     Servo back;
-    double min = 0;
-    double scalar = 180;
+    double scalar = 55;
 
     // Creates a new ServoSubsystem.
     public ServoSubsystem() {
@@ -24,7 +23,7 @@ public class ServoSubsystem extends SubsystemBase {
     }
     // Sets the servos to inputted positions
     public void changePosition(double right, double left){
-        front.setAngle(right*scalar);
-        back.setAngle(left*scalar);
+        front.setAngle(scalar-(right*scalar));
+        back.setAngle(scalar-(left*scalar));
     }
 }

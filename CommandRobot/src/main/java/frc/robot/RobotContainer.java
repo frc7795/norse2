@@ -17,6 +17,7 @@ import frc.robot.commands.ArcadeDriveCommand;
 import frc.robot.commands.ServoCommand;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.ServoSubsystem;
+import frc.robot.subsystems.SolenoidSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -30,7 +31,9 @@ public class RobotContainer {
   private static final DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
 
   private static final ServoSubsystem m_servo = new ServoSubsystem();
-
+  
+  private static final SolenoidSubsystem m_solenoid = new SolenoidSubsystem();  
+  
   static Joystick controller = new Joystick(Constants.CONTROLLER_USB_ID);
   
   public static double getDriverRightTrigger() {
@@ -53,6 +56,7 @@ public class RobotContainer {
     configureButtonBindings();
     m_drivetrain.setDefaultCommand(new ArcadeDriveCommand(m_drivetrain, controller));
     m_servo.setDefaultCommand(new ServoCommand(m_servo, controller));
+    m_solenoid.setDefaultCommand(new ServoCommand(m_servo, controller));
   }
 
   /**

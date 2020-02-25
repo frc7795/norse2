@@ -27,7 +27,6 @@ public class SolenoidCommand extends CommandBase {
         @Override
         public void execute() {
             boolean noid = m_controller.getRawButtonPressed(Constants.Y);
-
             SmartDashboard.putBoolean("Solenoid", noid);
         }
     }
