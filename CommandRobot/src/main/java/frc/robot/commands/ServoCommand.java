@@ -19,14 +19,18 @@ public class ServoCommand extends CommandBase {
   
   ServoSubsystem m_servo;
   Joystick m_controller;
-  double rPosition = m_controller.getRawAxis(Constants.RIGHT_TRIG);
-  double lPosition = m_controller.getRawAxis(Constants.LEFT_TRIG);
+  double rPosition;
+  double lPosition;
 
   public ServoCommand(ServoSubsystem servo, Joystick controller){
       m_servo = servo;
       m_controller = controller;
       addRequirements(m_servo);
+
+      rPosition = m_controller.getRawAxis(Constants.RIGHT_TRIG);
+      lPosition = m_controller.getRawAxis(Constants.LEFT_TRIG);
   }
+
 
   @Override
   public void initialize() {

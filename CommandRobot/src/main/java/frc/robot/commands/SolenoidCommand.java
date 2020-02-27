@@ -18,7 +18,6 @@ public class SolenoidCommand extends CommandBase {
         
     SolenoidSubsystem m_solenoid;
     Joystick m_controller;
-    boolean status = m_controller.getRawButton(Constants.Y);
 
     public SolenoidCommand(SolenoidSubsystem solenoid, Joystick controller){
         m_solenoid = solenoid;

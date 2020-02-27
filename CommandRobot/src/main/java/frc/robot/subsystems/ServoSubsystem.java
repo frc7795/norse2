@@ -14,12 +14,13 @@ public class ServoSubsystem extends SubsystemBase {
     
     Servo front;
     Servo back;
-    double scalar = 55;
+    double scalar;
 
     // Creates a new ServoSubsystem.
     public ServoSubsystem() {
         front = new Servo(Constants.F_SERVO_CAN_ID);
         back = new Servo(Constants.B_SERVO_CAN_ID);
+        scalar = 65;
     }
     // Sets the servos to inputted positions
     public void changePosition(double right, double left){

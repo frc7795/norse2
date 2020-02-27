@@ -24,9 +24,4 @@ public class WinchCommand extends CommandBase {
         m_controller = controller;
         addRequirements(m_winch);
     }
-
-    @Override
-    public void execute() {
-      m_winch.changeSpeed(0.0);
-  }
 }
