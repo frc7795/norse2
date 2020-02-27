@@ -36,10 +36,6 @@ public class ServoCommand extends CommandBase {
 
   @Override
   public void execute() {
-
-      SmartDashboard.putNumber("Back Servos", lPosition);
-      SmartDashboard.putNumber("Front Servos", rPosition);
-
       m_servo.changePosition(RobotContainer.getDriverRightTrigger(), RobotContainer.getDriverLeftTrigger());
   }
 }
