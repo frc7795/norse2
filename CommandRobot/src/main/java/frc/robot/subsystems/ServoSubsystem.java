@@ -6,7 +6,7 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.subsystems;
 
-//import frc.robot.RobotContainer;
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Servo;
 
@@ -18,8 +18,8 @@ public class ServoSubsystem extends SubsystemBase {
 
     // Creates a new ServoSubsystem.
     public ServoSubsystem() {
-        front = new Servo(6);
-        back = new Servo(7);
+        front = new Servo(Constants.F_SERVO_CAN_ID);
+        back = new Servo(Constants.B_SERVO_CAN_ID);
     }
     // Sets the servos to inputted positions
     public void changePosition(double right, double left){

@@ -16,6 +16,13 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    //Motor & Servo IDs
+
+    public static final int WINCH_CAN_ID = 5;
+    public static final int F_SERVO_CAN_ID = 6;
+    public static final int B_SERVO_CAN_ID = 7;
+
+
     // CAN IDs
     //FL == front left, etc.
     public static final int FL_DRIVE_CAN_ID = 1;

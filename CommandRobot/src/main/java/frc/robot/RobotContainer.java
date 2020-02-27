@@ -15,9 +15,12 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
 import frc.robot.commands.ArcadeDriveCommand;
 import frc.robot.commands.ServoCommand;
+import frc.robot.commands.SolenoidCommand;
+import frc.robot.commands.WinchCommand;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.ServoSubsystem;
 import frc.robot.subsystems.SolenoidSubsystem;
+import frc.robot.subsystems.WinchSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -34,6 +37,8 @@ public class RobotContainer {
   
   private static final SolenoidSubsystem m_solenoid = new SolenoidSubsystem();  
   
+  private static final WinchSubsystem m_winch = new WinchSubsystem();
+
   static Joystick controller = new Joystick(Constants.CONTROLLER_USB_ID);
   
   public static double getDriverRightTrigger() {
@@ -56,7 +61,8 @@ public class RobotContainer {
     configureButtonBindings();
     m_drivetrain.setDefaultCommand(new ArcadeDriveCommand(m_drivetrain, controller));
     m_servo.setDefaultCommand(new ServoCommand(m_servo, controller));
-    m_solenoid.setDefaultCommand(new ServoCommand(m_servo, controller));
+    m_solenoid.setDefaultCommand(new SolenoidCommand(m_solenoid, controller));
+    m_winch.setDefaultCommand(new WinchCommand(m_winch, controller));
   }
 
   /**
