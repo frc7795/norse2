@@ -6,7 +6,7 @@
 /*----------------------------------------------------------------------------*/
 package frc.robot.subsystems;
 
-import frc.robot.RobotContainer;
+//import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Solenoid;
 
@@ -18,8 +18,7 @@ public class SolenoidSubsystem extends SubsystemBase {
         sproing.set(false);
     }
 
-    public static void changePosition(){
-        boolean input = RobotContainer.getDriverYButton();
+    public void changePosition(boolean input){
         sproing.set(input);
     }
 }
