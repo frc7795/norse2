@@ -1,0 +1,10 @@
+Left Joystick: Forwards/backwards driving
+Right Joystick: Right/Left turning
+
+Left Trigger: Rear servo
+Right Trigger: Front servo
+
+Y: Solenoid switch
+
+A: Pull winch in
+B: Let winch out

@@ -8,17 +8,17 @@ package frc.robot.subsystems;
 
 //import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DigitalOutput;;
 
 public class SolenoidSubsystem extends SubsystemBase {
 
-    private static Solenoid sproing = new Solenoid(0);
+    DigitalOutput solenoid;
 
     public SolenoidSubsystem(){
-        sproing.set(false);
+        solenoid = new DigitalOutput(0);
     }
 
     public void changePosition(boolean input){
-        sproing.set(input);
+        solenoid.set(input);
     }
 }

@@ -19,7 +19,7 @@ public class ArcadeDriveCommand extends CommandBase {
   DrivetrainSubsystem m_drivetrain;
   Joystick m_controller;
   private double lastSetPower = 0.0;
-  private double magicPowerFraction = 0.2;
+  private double magicPowerFraction = 0.1;
   /**
    * Creates a new TankDriveCommand.
    */
