@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 //import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
-//import frc.robot.Robot;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.WinchSubsystem;
 
 public class WinchCommand extends CommandBase {
@@ -23,5 +23,24 @@ public class WinchCommand extends CommandBase {
         m_winch = winch;
         m_controller = controller;
         addRequirements(m_winch);
+    }
+
+    @Override
+    public void execute() {
+        boolean a = RobotContainer.getDriverAButton();
+        boolean b = RobotContainer.getDriverBButton();
+
+        if (a && b) {
+            m_winch.changeSpeed(0);
+        }
+        else if(a) {
+            m_winch.changeSpeed(.7);
+        }
+        else if(b) {
+            m_winch.changeSpeed(-.7);
+        }
+        else {
+            m_winch.changeSpeed(0);
+        }
     }
 }

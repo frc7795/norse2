@@ -9,15 +9,15 @@ package frc.robot.subsystems;
 
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.VictorSP;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 public class WinchSubsystem extends SubsystemBase {
     
-    VictorSP winch;
+    WPI_VictorSPX winch;
 
     // Creates a new WinchSubsystem.
     public WinchSubsystem() {
-        winch = new VictorSP(Constants.WINCH_CAN_ID);
+        winch = new WPI_VictorSPX(Constants.WINCH_CAN_ID);
     }
     // Sets the winch to a position
     public void changeSpeed(double speed){
