@@ -33,11 +33,13 @@ public class WinchCommand extends CommandBase {
         if (a && b) {
             m_winch.changeSpeed(0);
         }
+        // Lets winch out
         else if(a) {
             m_winch.changeSpeed(.7);
         }
+        // Pulls winch in
         else if(b) {
-            m_winch.changeSpeed(-.7);
+            m_winch.changeSpeed(-1);
         }
         else {
             m_winch.changeSpeed(0);

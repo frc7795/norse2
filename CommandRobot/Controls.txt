@@ -6,5 +6,5 @@ Right Trigger: Front servo
 
 Y: Solenoid switch
 
-A: Pull winch in
-B: Let winch out
+B: Pull winch in
+A: Let winch out
