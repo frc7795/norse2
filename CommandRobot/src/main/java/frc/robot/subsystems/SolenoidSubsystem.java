@@ -8,17 +8,24 @@ package frc.robot.subsystems;
 
 //import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.DigitalOutput;;
+import edu.wpi.first.wpilibj.DigitalOutput;
+import edu.wpi.first.wpilibj.Timer;
 
 public class SolenoidSubsystem extends SubsystemBase {
 
     DigitalOutput solenoid;
+    Timer timer;
 
     public SolenoidSubsystem(){
         solenoid = new DigitalOutput(0);
     }
 
-    public void changePosition(boolean input){
-        solenoid.set(input);
+    public void activate(boolean input){
+        timer.start();
+        while(!timer.hasPeriodPassed(0.5)){
+            solenoid.set(input);
+        }
+        timer.stop();
+        timer.reset();
     }
 }

@@ -30,10 +30,7 @@ public class SolenoidCommand extends CommandBase {
     public void execute() {
       boolean y = RobotContainer.getDriverYButton();
       if(y) {
-        m_solenoid.changePosition(true);
-      }
-      else{
-        m_solenoid.changePosition(false);
+        m_solenoid.activate(true);
       }
   }
 }
