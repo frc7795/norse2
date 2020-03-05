@@ -83,17 +83,13 @@ public class Robot extends TimedRobot {
   public void autonomousPeriodic() {
     /*double time = Timer.getFPGATimestamp();
     
-    while (time < 3) {
+    while (time < 1) {
       Robot.drivetrain.drive(power, steering);
     }
 
-    while (time > 3 && time < 5){
+    while (time > 1 && time < 1.5){
       Robot.drivetrain.drive(power2, steering2);
-    }
-
-    while (time > 5 && time < 9) {
-      Robot.drivetrain.drive(power3, steering3);
-    } */
+    }*/
   }
 
   @Override
