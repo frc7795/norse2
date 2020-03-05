@@ -84,11 +84,11 @@ public class Robot extends TimedRobot {
     /*double time = Timer.getFPGATimestamp();
     
     while (time < 1) {
-      Robot.drivetrain.drive(power, steering);
+      Robot.drivetrain.drive(0.0, 1.0);
     }
 
     while (time > 1 && time < 1.5){
-      Robot.drivetrain.drive(power2, steering2);
+      Robot.drivetrain.drive(0.5, 0.0);
     }*/
   }
 
