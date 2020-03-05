@@ -50,7 +50,7 @@ public class RobotContainer {
   }
 
   public static boolean getDriverYButton() {
-    return controller.getRawButtonPressed(Constants.Y);
+    return controller.getRawButton(Constants.Y);
   }
 
   public static boolean getDriverAButton() {

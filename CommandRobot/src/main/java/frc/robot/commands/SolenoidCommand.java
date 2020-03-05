@@ -10,7 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.Joystick;
 //import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Constants;
+//import frc.robot.Constants;
 import frc.robot.RobotContainer;
 //import frc.robot.Robot;
 import frc.robot.subsystems.SolenoidSubsystem;
@@ -30,7 +30,7 @@ public class SolenoidCommand extends CommandBase {
     public void execute() {
       boolean y = RobotContainer.getDriverYButton();
       if(y) {
-        m_solenoid.activate(true);
+        m_solenoid.activate();
       }
   }
 }

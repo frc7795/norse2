@@ -4,7 +4,7 @@ Right Joystick: Right/Left turning
 Left Trigger: Rear servo
 Right Trigger: Front servo
 
-Y: Solenoid switch
+Y: Solenoid switch (press once to activate)
 
 B: Pull winch in
 A: Let winch out

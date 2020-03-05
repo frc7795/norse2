@@ -18,13 +18,15 @@ public class SolenoidSubsystem extends SubsystemBase {
 
     public SolenoidSubsystem(){
         solenoid = new DigitalOutput(0);
+        timer = new Timer();
     }
 
-    public void activate(boolean input){
+    public void activate(){
         timer.start();
-        while(!timer.hasPeriodPassed(0.5)){
-            solenoid.set(input);
+        while(timer.get()<.5){
+            solenoid.set(true);
         }
+        solenoid.set(false);
         timer.stop();
         timer.reset();
     }
