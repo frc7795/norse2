@@ -91,7 +91,7 @@ public class Robot extends TimedRobot {
       Robot.drivetrain.drive(0.5, 0.0);
     } else if (elapsed < 2.0) {
       Robot.drivetrain.drive(0.0, 1.0);
-    } else if (elapsed < 2.5) {
+    } else {
       Robot.drivetrain.drive(0.0, 0.0);
     }
   }
