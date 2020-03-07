@@ -8,7 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-//import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.DrivetrainSubsystem;
@@ -24,7 +24,7 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
-
+  private double startTime = Timer.getFPGATimestamp();
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -81,24 +81,19 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    /*double time = Timer.getFPGATimestamp();
+    double elapsed = Timer.getFPGATimestamp() - startTime;
     
-    while (time < 1) {
+    if (elapsed < 0.5) {
       Robot.drivetrain.drive(0.5, 0.0);
-    }
-
-    while (time > 1 && time < 1.5) {
+    } else if (elapsed < 1.0) {
       Robot.drivetrain.drive(0.0, 1.0);
-    }
-    
-    while (time > 1.5 && time < 3.0) {
+    } else if (elapsed < 1.5) {
       Robot.drivetrain.drive(0.5, 0.0);
+    } else if (elapsed < 2.0) {
+      Robot.drivetrain.drive(0.0, 1.0);
+    } else if (elapsed < 2.5) {
+      Robot.drivetrain.drive(0.0, 0.0);
     }
-    
-    while (time > 3.0 && time < 3.5) {
-      Robot.drivetrain.drive(0.0., 1.0);
-    }
-    */
   }
 
   @Override

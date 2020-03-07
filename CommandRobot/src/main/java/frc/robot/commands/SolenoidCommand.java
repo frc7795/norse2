@@ -28,7 +28,10 @@ public class SolenoidCommand extends CommandBase {
 
     @Override
     public void execute() {
+      boolean x = RobotContainer.getDriverXButton();
       boolean y = RobotContainer.getDriverYButton();
+
+      m_solenoid.hold(x);
       if(y) {
         m_solenoid.activate();
       }

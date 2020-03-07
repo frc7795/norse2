@@ -30,4 +30,8 @@ public class SolenoidSubsystem extends SubsystemBase {
         timer.stop();
         timer.reset();
     }
+
+    public void hold(boolean bool){
+        solenoid.set(bool);
+    }
 }
