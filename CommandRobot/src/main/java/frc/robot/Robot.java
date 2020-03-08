@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.DrivetrainSubsystem;
+import frc.robot.Constants;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -69,8 +70,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
-
-    // schedule the autonomous command (example)
+    // Schedule the command (if there is one)
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
@@ -81,19 +81,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    double elapsed = Timer.getFPGATimestamp() - startTime;
-    
-    if (elapsed < 0.5) {
-      Robot.drivetrain.drive(0.5, 0.0);
-    } else if (elapsed < 1.0) {
-      Robot.drivetrain.drive(0.0, 1.0);
-    } else if (elapsed < 1.5) {
-      Robot.drivetrain.drive(0.5, 0.0);
-    } else if (elapsed < 2.0) {
-      Robot.drivetrain.drive(0.0, 1.0);
-    } else {
-      Robot.drivetrain.drive(0.0, 0.0);
-    }
   }
 
   @Override

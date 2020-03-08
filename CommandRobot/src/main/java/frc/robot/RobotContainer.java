@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 //import edu.wpi.first.wpilibj2.command.button.Button;
 import frc.robot.Constants;
 import frc.robot.commands.ArcadeDriveCommand;
+import frc.robot.commands.AutonomousCommand;
 import frc.robot.commands.ServoCommand;
 import frc.robot.commands.SolenoidCommand;
 import frc.robot.commands.WinchCommand;
@@ -31,6 +32,8 @@ import frc.robot.subsystems.WinchSubsystem;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   
+  private static AutonomousCommand m_autonomousCommand = null;
+
   private static final DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
 
   private static final ServoSubsystem m_servo = new ServoSubsystem();
@@ -92,8 +95,10 @@ public class RobotContainer {
    *
    * @return the command to run in autonomous
    */
-   public Command getAutonomousCommand() {
-    // An ExampleCommand will run in autonomous
-   return null;
+  public Command getAutonomousCommand() {
+      if (m_autonomousCommand == null) {
+	  m_autonomousCommand = new AutonomousCommand(m_drivetrain);
+      }
+      return m_autonomousCommand;
   }
 }
