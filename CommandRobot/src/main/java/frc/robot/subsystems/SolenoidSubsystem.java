@@ -21,6 +21,7 @@ public class SolenoidSubsystem extends SubsystemBase {
         timer = new Timer();
     }
 
+    // Holds the solenoid for a set period of time
     public void activate(){
         timer.start();
         while(timer.get()<.5){
@@ -31,6 +32,7 @@ public class SolenoidSubsystem extends SubsystemBase {
         timer.reset();
     }
 
+    // Solenoid hold and release is synchronized with button press
     public void hold(boolean bool){
         solenoid.set(bool);
     }
