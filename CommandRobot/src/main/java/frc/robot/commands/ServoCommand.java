@@ -22,6 +22,7 @@ public class ServoCommand extends CommandBase {
   double rPosition;
   double lPosition;
 
+  // Calls every scheduler run
   public ServoCommand(ServoSubsystem servo, Joystick controller){
       m_servo = servo;
       m_controller = controller;
@@ -38,6 +39,7 @@ public class ServoCommand extends CommandBase {
       SmartDashboard.putNumber("Front Servos", rPosition);
   }
 
+  // Runs two servos under same subsystem
   @Override
   public void execute() {
       m_servo.changePosition(RobotContainer.getDriverRightTrigger(), RobotContainer.getDriverLeftTrigger());
