@@ -46,4 +46,8 @@ public final class Constants {
     public static final int B = 2;
     public static final int X = 3;
     public static final int Y = 4;
+    public static final int L = 5;
+    public static final int R = 6;
+    public static final int BACK = 7;
+    public static final int START = 8;
 }

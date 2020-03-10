@@ -29,6 +29,11 @@ public class WinchCommand extends CommandBase {
     public void execute() {
         boolean a = RobotContainer.getDriverAButton();
         boolean b = RobotContainer.getDriverBButton();
+        boolean l = RobotContainer.getDriverLButton();
+
+        if (l) {
+            m_winch.activate();
+        }
 
         if (a && b) {
             m_winch.changeSpeed(0);
